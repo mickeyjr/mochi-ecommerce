@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ProductCard from '../components/ProductCardForm'
 const apiUrl = import.meta.env.VITE_API_URL
-const storeId = 'MX-ME-AP-01' //cambiar a futuro por una cookey
-
+const storeId = 'MX-ME-AP-01' // cambiar a futuro por una cookie
 
 export default function CatalogPage() {
   const [products, setProducts] = useState([])
