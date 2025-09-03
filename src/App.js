@@ -1,5 +1,5 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import CatalogPage from './pages/ProductCardPage'; // o el nombre correcto del archivo
+import CatalogPage from './pages/ProductCardPage';
 function Navbar() {
     return (_jsxs("nav", { style: {
             position: 'fixed',
@@ -7,7 +7,7 @@ function Navbar() {
             left: 0,
             right: 0,
             height: '60px',
-            background: 'linear-gradient(90deg, #8e2de2, #4a00e0)', // gradiente morado
+            background: 'linear-gradient(90deg, #8e2de2, #4a00e0)',
             color: '#fff',
             display: 'flex',
             alignItems: 'center',
@@ -33,7 +33,7 @@ function Footer() {
             left: 0,
             right: 0,
             height: '70px',
-            background: 'linear-gradient(90deg, #7b2ff7, #a727f7)', // gradiente morado combinando con navbar
+            background: 'linear-gradient(90deg, #7b2ff7, #a727f7)',
             color: '#fff',
             display: 'flex',
             alignItems: 'center',
@@ -52,14 +52,14 @@ export default function App() {
             display: 'flex',
             flexDirection: 'column',
             minHeight: '100vh',
-            backgroundImage: 'url(/ruta/a/tu/imagen.jpg)',
+            //backgroundImage: 'url(/ruta/a/tu/imagen.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
         }, children: [_jsx(Navbar, {}), _jsx("main", { style: {
                     flex: 1,
                     paddingTop: '60px',
-                    paddingBottom: '70px', // deja espacio para el footer
+                    paddingBottom: '70px',
                 }, children: _jsx(CatalogPage, {}) }), _jsx("div", { style: {
                     position: 'fixed',
                     bottom: '80px',
@@ -80,6 +80,6 @@ export default function App() {
                         }, onMouseEnter: e => e.currentTarget.style.transform = 'scale(1.1)', onMouseLeave: e => e.currentTarget.style.transform = 'scale(1)', children: _jsx("img", { src: "/whatsapp.png", alt: "WhatsApp", style: {
                                 maxWidth: '70%',
                                 maxHeight: '70%',
-                                objectFit: 'contain', // mantiene proporción
+                                objectFit: 'contain',
                             } }) }) }) }), _jsx(Footer, {})] }));
 }
