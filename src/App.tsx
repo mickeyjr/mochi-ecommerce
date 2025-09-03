@@ -1,5 +1,5 @@
 import React from 'react';
-import CatalogPage from './pages/ProductCardPage'; // o el nombre correcto del archivo
+import CatalogPage from './pages/ProductCardPage'; 
 
 function Navbar() {
   return (
@@ -10,7 +10,7 @@ function Navbar() {
         left: 0,
         right: 0,
         height: '60px',
-        background: 'linear-gradient(90deg, #8e2de2, #4a00e0)', // gradiente morado
+        background: 'linear-gradient(90deg, #8e2de2, #4a00e0)',
         color: '#fff',
         display: 'flex',
         alignItems: 'center',
@@ -55,7 +55,7 @@ function Footer() {
         left: 0,
         right: 0,
         height: '70px',
-        background: 'linear-gradient(90deg, #7b2ff7, #a727f7)', // gradiente morado combinando con navbar
+        background: 'linear-gradient(90deg, #7b2ff7, #a727f7)', 
         color: '#fff',
         display: 'flex',
         alignItems: 'center',
@@ -91,7 +91,7 @@ export default function App() {
         display: 'flex',
         flexDirection: 'column',
         minHeight: '100vh',
-        backgroundImage: 'url(/ruta/a/tu/imagen.jpg)',
+        //backgroundImage: 'url(/ruta/a/tu/imagen.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -102,7 +102,7 @@ export default function App() {
         style={{
           flex: 1,
           paddingTop: '60px',
-          paddingBottom: '70px', // deja espacio para el footer
+          paddingBottom: '70px', 
         }}
       >
         <CatalogPage />
@@ -144,7 +144,7 @@ export default function App() {
               style={{
                 maxWidth: '70%',
                 maxHeight: '70%',
-                objectFit: 'contain', // mantiene proporción
+                objectFit: 'contain',
               }}
             />
           </div>
