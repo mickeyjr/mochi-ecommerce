@@ -39,7 +39,7 @@ function Navbar() {
         />
       </div>
       <h1 style={{ margin: 0, fontFamily: 'Arial, sans-serif', fontWeight: '600' }}>
-        Mochi E-Commerce
+        Mochi Store
       </h1>
     </nav>
   );
