@@ -54,31 +54,41 @@ function Footer() {
         bottom: 0,
         left: 0,
         right: 0,
-        height: '70px',
-        background: 'linear-gradient(90deg, #7b2ff7, #a727f7)', 
+        height: '80px',
+        background: 'linear-gradient(90deg, #7b2ff7, #a727f7)',
         color: '#fff',
-        display: 'flex',
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr 1fr',
         alignItems: 'center',
-        justifyContent: 'center',
-        padding: '0 20px',
+        padding: '0 30px',
         fontFamily: 'Arial, sans-serif',
         fontSize: '14px',
         boxShadow: '0 -2px 15px rgba(0,0,0,0.3)',
-        backdropFilter: 'blur(8px)', // efecto glass sutil
+        backdropFilter: 'blur(8px)',
         borderTop: '1px solid rgba(255,255,255,0.2)',
         zIndex: 1000,
       }}
     >
-      <p style={{ margin: 0, fontWeight: '500' }}>© {new Date().getFullYear()} Mochi Store</p>
-
-      {/*
-      // Redes sociales comentadas por ahora
-      <div style={{ display: 'flex', gap: '15px', marginLeft: '20px' }}>
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'none' }}>Facebook</a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'none' }}>Twitter</a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'none' }}>Instagram</a>
+      {/* Izquierda: Ubicación */}
+      <div style={{ textAlign: 'left', lineHeight: '1.4' }}>
+        <a
+          href="https://maps.app.goo.gl/iK5RJiwv3roN3Vxf9"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: '#fff', textDecoration: 'none' }}
+        >
+          📍 Apaxco Centro<br />
+          Calle Abasolo #19
+        </a>
       </div>
-      */}
+
+      {/* Centro: Mochi Store */}
+      <div style={{ textAlign: 'center', fontWeight: '500' }}>
+        © {new Date().getFullYear()} Mochi Store
+      </div>
+
+      {/* Derecha vacía para balance visual */}
+      <div></div>
     </footer>
   );
 }

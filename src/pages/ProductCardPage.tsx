@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCardForm";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -98,10 +98,11 @@ export default function CatalogPage() {
       {banners.length > 0 && (
         <div className="mb-10">
           <Swiper
-            modules={[Navigation, Pagination]}
+            modules={[Navigation, Pagination, Autoplay]}
             navigation
             pagination={{ clickable: true }}
             loop
+            autoplay={{ delay: 5000, disableOnInteraction: false }}
             autoHeight
             className="rounded-2xl shadow-lg"
           >
