@@ -1,6 +1,7 @@
 import React from 'react';
 import CatalogPage from './pages/ProductCardPage'; 
 
+//
 function Navbar() {
   return (
     <nav
