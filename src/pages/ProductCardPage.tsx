@@ -79,7 +79,6 @@ export default function CatalogPage() {
     return btoa(binary);
   };
 
-  // Arreglo aquí: usar Mimetype o MimetypeApp según corresponda
   const getImageSrc = (banner: any, isMobile: boolean) => {
     const buffer = isMobile ? banner.ImageApp : banner.Imagen;
     const mimetype = isMobile ? banner.MimetypeApp : banner.Mimetype;
@@ -109,10 +108,7 @@ export default function CatalogPage() {
             {banners.map((banner: any) => (
               <SwiperSlide key={banner._id}>
                 {/* Web */}
-                <div
-                  className="hidden md:block w-full"
-                  style={{ maxHeight: 400, overflow: "hidden" }}
-                >
+                <div className="hidden md:block w-full" style={{ maxHeight: 400, overflow: "hidden" }}>
                   {banner.Imagen ? (
                     <img
                       src={getImageSrc(banner, false)}
@@ -127,10 +123,7 @@ export default function CatalogPage() {
                 </div>
 
                 {/* App/Mobile */}
-                <div
-                  className="block md:hidden w-full"
-                  style={{ maxHeight: 300, overflow: "hidden" }}
-                >
+                <div className="block md:hidden w-full" style={{ maxHeight: 300, overflow: "hidden" }}>
                   {banner.ImageApp?.data?.length > 0 ? (
                     <img
                       src={getImageSrc(banner, true)}
@@ -149,9 +142,33 @@ export default function CatalogPage() {
         </div>
       )}
 
+      {/* Índice de navegación con scroll suave */}
+      <div className="flex flex-wrap gap-4 mb-8">
+        {series.map((serie: any, i: number) => (
+          <a
+            key={`link-${serie.Serie}-${i}`}
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById(`serie-${serie.Serie}`)?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }}
+            href={`#serie-${serie.Serie}`}
+            className="px-3 py-1 bg-purple-200 text-purple-900 rounded hover:bg-purple-300 transition cursor-pointer"
+          >
+            {serie.Serie}
+          </a>
+        ))}
+      </div>
+
       {/* Productos por serie */}
       {series.map((serie: any, i: number) => (
-        <div key={`${serie.Serie}-${i}`} className="mb-10 w-full">
+        <div
+          key={`${serie.Serie}-${i}`}
+          id={`serie-${serie.Serie}`}
+          className="mb-10 w-full scroll-mt-20"
+        >
           <div
             className="flex items-center mb-6 cursor-pointer"
             onClick={() => toggleSerie(serie.Serie)}
@@ -171,6 +188,27 @@ export default function CatalogPage() {
           )}
         </div>
       ))}
+
+            {/* Índice de navegación con scroll suave */}
+      <div className="flex flex-wrap gap-4 mb-8">
+        {series.map((serie: any, i: number) => (
+          <a
+            key={`link-${serie.Serie}-${i}`}
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById(`serie-${serie.Serie}`)?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }}
+            href={`#serie-${serie.Serie}`}
+            className="px-3 py-1 bg-purple-200 text-purple-900 rounded hover:bg-purple-300 transition cursor-pointer"
+          >
+            {serie.Serie}
+          </a>
+        ))}
+      </div>
+
     </div>
   );
 }

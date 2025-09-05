@@ -1,5 +1,6 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import CatalogPage from './pages/ProductCardPage';
+//
 function Navbar() {
     return (_jsxs("nav", { style: {
             position: 'fixed',
