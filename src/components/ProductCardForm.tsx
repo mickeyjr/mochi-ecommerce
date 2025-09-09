@@ -7,13 +7,15 @@ type Product = {
   imagenes: {
     ImagenMimeType: string
     ImagenBuffer: string
+    UrlImage: string
   }[]
 }
 
 export default function ProductCard({ product }: { product: Product }) {
   const hasImage = Array.isArray(product.imagenes) && product.imagenes.length > 0
   const imageSrc = hasImage
-    ? `data:${product.imagenes[0].ImagenMimeType};base64,${product.imagenes[0].ImagenBuffer}`
+
+    ? `${product.imagenes[0].UrlImage}`
     : "https://via.placeholder.com/300x200?text=Sin+imagen"
 
   return (
