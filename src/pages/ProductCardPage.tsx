@@ -39,9 +39,7 @@ export default function CatalogPage() {
       .then((data) => {
         data.forEach((b: any) =>
           console.log(
-            b._id,
-            b.Imagen ? "Web OK" : "Web missing",
-            b.ImageApp ? "App OK" : "App missing"
+            b
           )
         );
         setBanners(data);
@@ -79,18 +77,6 @@ export default function CatalogPage() {
     return btoa(binary);
   };
 
-  const getImageSrc = (banner: any, isMobile: boolean) => {
-    const buffer = isMobile ? banner.ImageApp : banner.Imagen;
-    const mimetype = isMobile ? banner.MimetypeApp : banner.Mimetype;
-
-    if (!buffer) {
-      console.warn(`No hay imagen para ${isMobile ? "App" : "Web"}:`, banner);
-      return "";
-    }
-
-    return `data:${mimetype || "image/jpeg"};base64,${arrayBufferToBase64(buffer)}`;
-  };
-
   return (
     <div className="min-h-screen bg-purple-100 p-8">
       {/* Slider de banners */}
@@ -109,9 +95,9 @@ export default function CatalogPage() {
               <SwiperSlide key={banner._id}>
                 {/* Web */}
                 <div className="hidden md:block w-full" style={{ maxHeight: 400, overflow: "hidden" }}>
-                  {banner.Imagen ? (
+                  {banner.ImagenUrl ? (
                     <img
-                      src={getImageSrc(banner, false)}
+                      src={banner.ImagenUrl}
                       alt="Banner Web"
                       className="w-full h-full object-contain rounded-2xl"
                     />
@@ -124,9 +110,9 @@ export default function CatalogPage() {
 
                 {/* App/Mobile */}
                 <div className="block md:hidden w-full" style={{ maxHeight: 300, overflow: "hidden" }}>
-                  {banner.ImageApp?.data?.length > 0 ? (
+                  {banner.ImageUrlApp ? (
                     <img
-                      src={getImageSrc(banner, true)}
+                      src={banner.ImageUrlApp}
                       alt="Banner App"
                       className="w-full h-full object-contain rounded-2xl"
                     />
